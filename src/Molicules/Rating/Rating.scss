@@ -1,0 +1,13 @@
+.product-rating {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-top: auto;
+  span {
+    &:first-of-type {
+      color: darkgreen;
+    }
+    &:last-of-type {
+      color: darkorange;
+    }
+  }
+}

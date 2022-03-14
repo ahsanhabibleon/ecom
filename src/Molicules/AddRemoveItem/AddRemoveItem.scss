@@ -1,0 +1,21 @@
+.add-remove-btn-group {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  span {
+    width: 2rem;
+    height: 2rem;
+    text-align: center;
+    font-size: 2rem;
+    line-height: 2rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    &:hover {
+      background-color: #eee;
+    }
+    &:first-child {
+      border-right: 1px solid #ccc;
+    }
+  }
+}
