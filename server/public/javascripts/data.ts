@@ -20,189 +20,194 @@ interface storeItemTypes {
     count: number;
   };
 }
+interface InitialDataTypes {
+  users: userTypes[],
+  products: storeItemTypes[]
+}
 
-export const users: userTypes[] = [
-  {
-    name: "Basir",
-    email: "admin@example.com",
-    password: bcrypt.hashSync("123456"),
-    isAdmin: true,
-  },
-  {
-    name: "John",
-    email: "user@example.com",
-    password: bcrypt.hashSync("123456"),
-    isAdmin: false,
-  },
-];
-
-export const data: storeItemTypes[] = [
-  {
-    title: "Gulu",
-    category: "shirt",
-    description: "This is the description",
-    image: "https://via.placeholder.com/150",
-    price: 56,
-    inStock: 15,
-    rating: {
-      rate: 3,
-      count: 65,
+export const data: InitialDataTypes = {
+  users: [
+    {
+      name: "Basir",
+      email: "admin@example.com",
+      password: bcrypt.hashSync("123456"),
+      isAdmin: true,
     },
-  },
-  {
-    title: "Gulu",
-    category: "shirt",
-    description: "This is the description",
-    image: "https://via.placeholder.com/150",
-    price: 56,
-    inStock: 3,
-    rating: {
-      rate: 4.1,
-      count: 65,
+    {
+      name: "John",
+      email: "user@example.com",
+      password: bcrypt.hashSync("123456"),
+      isAdmin: false,
     },
-  },
-  {
-    title: "Gulu",
-    category: "pant",
-    description: "This is the description",
-    image: "https://via.placeholder.com/150",
-    price: 56,
-    inStock: 0,
-    rating: {
-      rate: 4.1,
-      count: 65,
+  ],
+  products: [
+    {
+      title: "Gulu",
+      category: "shirt",
+      description: "This is the description",
+      image: "https://via.placeholder.com/150",
+      price: 56,
+      inStock: 15,
+      rating: {
+        rate: 3,
+        count: 65,
+      },
     },
-  },
-  {
-    title: "Gulu",
-    category: "trouser",
-    description: "This is the description",
-    image: "https://via.placeholder.com/150",
-    price: 56,
-    inStock: 15,
-    rating: {
-      rate: 4.1,
-      count: 65,
+    {
+      title: "Gulu",
+      category: "shirt",
+      description: "This is the description",
+      image: "https://via.placeholder.com/150",
+      price: 56,
+      inStock: 3,
+      rating: {
+        rate: 4.1,
+        count: 65,
+      },
     },
-  },
-  {
-    title: "Gulu",
-    category: "shirt",
-    description: "This is the description",
-    image: "https://via.placeholder.com/150",
-    price: 56,
-    inStock: 0,
-    rating: {
-      rate: 4.1,
-      count: 65,
+    {
+      title: "Gulu",
+      category: "pant",
+      description: "This is the description",
+      image: "https://via.placeholder.com/150",
+      price: 56,
+      inStock: 0,
+      rating: {
+        rate: 4.1,
+        count: 65,
+      },
     },
-  },
-  {
-    title: "Gulu",
-    category: "t-shirt",
-    description: "This is the description",
-    image: "https://via.placeholder.com/150",
-    price: 56,
-    inStock: 15,
-    rating: {
-      rate: 4.1,
-      count: 65,
+    {
+      title: "Gulu",
+      category: "trouser",
+      description: "This is the description",
+      image: "https://via.placeholder.com/150",
+      price: 56,
+      inStock: 15,
+      rating: {
+        rate: 4.1,
+        count: 65,
+      },
     },
-  },
-  {
-    title: "Gulu",
-    category: "t-shirt",
-    description: "This is the description",
-    image: "https://via.placeholder.com/150",
-    price: 56,
-    inStock: 2,
-    rating: {
-      rate: 4.1,
-      count: 65,
+    {
+      title: "Gulu",
+      category: "shirt",
+      description: "This is the description",
+      image: "https://via.placeholder.com/150",
+      price: 56,
+      inStock: 0,
+      rating: {
+        rate: 4.1,
+        count: 65,
+      },
     },
-  },
-  {
-    title: "Gulu",
-    category: "t-shirt",
-    description: "This is the description",
-    image: "https://via.placeholder.com/150",
-    price: 56,
-    inStock: 15,
-    rating: {
-      rate: 4.1,
-      count: 65,
+    {
+      title: "Gulu",
+      category: "t-shirt",
+      description: "This is the description",
+      image: "https://via.placeholder.com/150",
+      price: 56,
+      inStock: 15,
+      rating: {
+        rate: 4.1,
+        count: 65,
+      },
     },
-  },
-  {
-    title: "Gulu",
-    category: "t-shirt",
-    description: "This is the description",
-    image: "https://via.placeholder.com/150",
-    price: 56,
-    inStock: 1,
-    rating: {
-      rate: 4.1,
-      count: 65,
+    {
+      title: "Gulu",
+      category: "t-shirt",
+      description: "This is the description",
+      image: "https://via.placeholder.com/150",
+      price: 56,
+      inStock: 2,
+      rating: {
+        rate: 4.1,
+        count: 65,
+      },
     },
-  },
-  {
-    title: "Gulu",
-    category: "t-shirt",
-    description: "This is the description",
-    image: "https://via.placeholder.com/150",
-    price: 56,
-    inStock: 0,
-    rating: {
-      rate: 4.1,
-      count: 65,
+    {
+      title: "Gulu",
+      category: "t-shirt",
+      description: "This is the description",
+      image: "https://via.placeholder.com/150",
+      price: 56,
+      inStock: 15,
+      rating: {
+        rate: 4.1,
+        count: 65,
+      },
     },
-  },
-  {
-    title: "Gulu",
-    category: "t-shirt",
-    description: "This is the description",
-    image: "https://via.placeholder.com/150",
-    price: 56,
-    inStock: 15,
-    rating: {
-      rate: 4.1,
-      count: 65,
+    {
+      title: "Gulu",
+      category: "t-shirt",
+      description: "This is the description",
+      image: "https://via.placeholder.com/150",
+      price: 56,
+      inStock: 1,
+      rating: {
+        rate: 4.1,
+        count: 65,
+      },
     },
-  },
-  {
-    title: "Gulu",
-    category: "t-shirt",
-    description: "This is the description",
-    image: "https://via.placeholder.com/150",
-    price: 56,
-    inStock: 2,
-    rating: {
-      rate: 4.1,
-      count: 65,
+    {
+      title: "Gulu",
+      category: "t-shirt",
+      description: "This is the description",
+      image: "https://via.placeholder.com/150",
+      price: 56,
+      inStock: 0,
+      rating: {
+        rate: 4.1,
+        count: 65,
+      },
     },
-  },
-  {
-    title: "Gulu",
-    category: "t-shirt",
-    description: "This is the description",
-    image: "https://via.placeholder.com/150",
-    price: 56,
-    inStock: 0,
-    rating: {
-      rate: 4.1,
-      count: 65,
+    {
+      title: "Gulu",
+      category: "t-shirt",
+      description: "This is the description",
+      image: "https://via.placeholder.com/150",
+      price: 56,
+      inStock: 15,
+      rating: {
+        rate: 4.1,
+        count: 65,
+      },
     },
-  },
-  {
-    title: "Gulu",
-    category: "t-shirt",
-    description: "This is the description",
-    image: "https://via.placeholder.com/150",
-    price: 56,
-    inStock: 15,
-    rating: {
-      rate: 4.1,
-      count: 65,
+    {
+      title: "Gulu",
+      category: "t-shirt",
+      description: "This is the description",
+      image: "https://via.placeholder.com/150",
+      price: 56,
+      inStock: 2,
+      rating: {
+        rate: 4.1,
+        count: 65,
+      },
     },
-  },
-];
+    {
+      title: "Gulu",
+      category: "t-shirt",
+      description: "This is the description",
+      image: "https://via.placeholder.com/150",
+      price: 56,
+      inStock: 0,
+      rating: {
+        rate: 4.1,
+        count: 65,
+      },
+    },
+    {
+      title: "Gulu",
+      category: "t-shirt",
+      description: "This is the description",
+      image: "https://via.placeholder.com/150",
+      price: 56,
+      inStock: 15,
+      rating: {
+        rate: 4.1,
+        count: 65,
+      },
+    },
+  ],
+};

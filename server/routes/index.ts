@@ -1,3 +1,4 @@
 import seedRouter from "./seedRoutes";
 import productsRouter from "./productRoutes";
-export { seedRouter, productsRouter };
+import userRouter from "./userRoutes";
+export { seedRouter, productsRouter, userRouter };

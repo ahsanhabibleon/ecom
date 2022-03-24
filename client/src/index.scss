@@ -4,6 +4,7 @@ html {
 body {
   font-size: 1.6rem;
   font-family: "Roboto", sans-serif;
+  color: #333;
 }
 * {
   padding: 0;
@@ -12,6 +13,7 @@ body {
 }
 a {
   text-decoration: none;
+  color: lightseagreen;
 }
 
 .badge {
@@ -38,6 +40,18 @@ a {
 
 .bg-warning {
   background-color: #ffc107 !important;
+}
+
+.color-success {
+  color: #28a745 !important;
+}
+
+.color-danger {
+  color: #dc3545 !important;
+}
+
+.color-warning {
+  color: #ffc107 !important;
 }
 
 .disabled {

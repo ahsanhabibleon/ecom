@@ -1,8 +1,10 @@
 import { CartItemType } from "./Cart.types";
 import "./Cart.scss";
 import AddRemoveItem from "../../Molicules/AddRemoveItem";
-import Button from "../../Molicules/Button";
 import { useRef } from "react";
+import { useOutsideClickHandler } from "../../hooks";
+import { Link } from "react-router-dom";
+import { useSelect } from "../../store/selector";
 
 const Cart: React.FC<CartItemType> = ({
   cartItems,
@@ -10,7 +12,10 @@ const Cart: React.FC<CartItemType> = ({
   closeCart,
   totalNumberOfItems,
 }) => {
-  const cartRef = useRef(null);  
+  const { currentUser } = useSelect();
+  const cartRef = useRef(null);
+
+  useOutsideClickHandler(cartRef, closeCart);
 
   const totalPrice = cartItems.reduce(function (previousValue, currentValue) {
     return previousValue + currentValue.price * currentValue.quantity;
@@ -30,17 +35,6 @@ const Cart: React.FC<CartItemType> = ({
           // if (item.quantity === 0) return null;
           return (
             <div className="cart-item" key={"cart-" + item._id}>
-              {/* <Link
-                to={`/product-details/p_id:${product._id}/${product.title
-                  .trim()
-                  .toLowerCase()
-                  .split(" ")
-                  .join("-")}`}
-                className="cart-item-img"
-                onClick={setSelectedProduct}
-              >
-                <img src={product.image} alt={product.title} />
-              </Link> */}
               <div className="cart-item-img">
                 <img src={item.image} alt={item.title} />
               </div>
@@ -70,7 +64,13 @@ const Cart: React.FC<CartItemType> = ({
         })}
       </div>
       <div className="btn-wrapper">
-        <Button text="Proceed to Checkout" />
+        <Link
+          to={currentUser.token ? "/shipping" : "/sign-in?redirect=shipping"}
+          className="btn btn-full"
+          onClick={closeCart}
+        >
+          Proceed to checkout
+        </Link>
       </div>
     </div>
   );

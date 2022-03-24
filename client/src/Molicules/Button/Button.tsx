@@ -9,17 +9,27 @@ const Button: React.FC<ButtonProps> = ({
   primary = false,
   secondary = false,
   onClick,
-  disabled
+  disabled,
+  large = false,
+  leftIcon = "",
+  rightIcon = "",
+  btnText = false,
+  full = false,
 }) => {
   const buttonClasses = classNames({
     btn: true,
     "btn-primary": primary,
     "btn-secondary": secondary,
-    "disabled": disabled,
+    "btn-text": btnText,
+    "btn-full": full,
+    disabled: disabled,
+    large: large,
   });
   return (
     <button onClick={onClick} type={type} className={buttonClasses}>
-      {text}
+      {leftIcon && leftIcon}
+      {text && text}
+      {rightIcon && rightIcon}
     </button>
   );
 };
