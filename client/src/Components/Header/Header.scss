@@ -5,4 +5,38 @@
   align-items: center;
   border-bottom: 1px solid #ccc;
   padding: 1rem 2.4rem;
+  &-actions {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+  }
+}
+.cart-button {
+  position: relative;
+  color: #111;
+  cursor: pointer;
+  span {
+    position: absolute;
+    top: -0.8rem;
+    right: -0.8rem;
+    background: lightseagreen;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 100%;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: #fff;
+    text-align: center;
+  }
+}
+.header-actions {
+  position: relative;
+}
+
+.user-menu {
+  &-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
 }

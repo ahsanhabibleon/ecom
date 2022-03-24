@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const selectedProductSlice = createSlice({
   name: "selectedProduct",
   initialState: {
-    _id: '',
+    _id: "",
     title: "",
     category: "",
     description: "",
@@ -17,6 +17,7 @@ const selectedProductSlice = createSlice({
   },
   reducers: {
     setSelectedProductReducer: (state, action) => {
+      console.log({ state, action });
       return action.payload;
     },
   },
