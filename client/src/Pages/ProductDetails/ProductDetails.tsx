@@ -4,6 +4,7 @@ import "./ProductDetails.scss";
 import Product from "../../Components/Product";
 import { ProductTypes } from "../Shop/Shop.types";
 import { useQuery } from "react-query";
+import Loading from "../../Molicules/Loading";
 
 const ProductDetails: React.FC<ProductDetailsProps> = ({
   productId,
@@ -27,7 +28,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
     }
   );
 
-  if (isLoading) return <>Loading...</>;
+  if (isLoading) return <Loading />;
   if (error) return <>An error has occurred:</>; // + error.message;
 
   return (
