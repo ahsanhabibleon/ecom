@@ -214,6 +214,9 @@ const SignIn: React.FC<SignInPropTypes> = ({ formType = "sign-in" }) => {
             You are logged in as {currentUser.name}
           </p>
         )}
+        <div>
+          <Link to="/">Browse Products {">"}</Link>
+        </div>
       </form>
     </div>
   );

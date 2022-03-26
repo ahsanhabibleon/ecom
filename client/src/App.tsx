@@ -13,6 +13,7 @@ import { CartItemTypes } from "./Components/Cart/Cart.types";
 import SignIn from "./Pages/SignIn";
 import UserProfile from "./Pages/UserProfile";
 import ShippingAddress from "./Pages/ShippingAddress";
+import Loading from "./Molicules/Loading/Loading";
 
 const fetchProducts = async (): Promise<ProductTypes[]> => {
   return await fetch(
@@ -51,7 +52,7 @@ const App = () => {
   },
   0);
 
-  if (isLoading) return <>Loading...</>;
+  if (isLoading) return <Loading />;
 
   if (error) return <>An error has occurred:</>; // + error.message;
 
