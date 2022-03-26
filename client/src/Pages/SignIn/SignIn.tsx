@@ -9,12 +9,12 @@ import Input from "../../Molicules/Input";
 // import { getError } from "../../utils";
 
 const SignIn: React.FC<SignInPropTypes> = ({ formType = "sign-in" }) => {
-  const navigate = useNavigate();
-  const { search } = useLocation();
-  const redirectInUrl = new URLSearchParams(search).get("redirect");
-  const redirect = redirectInUrl ? `/${redirectInUrl}` : "/";
+  // const navigate = useNavigate();
+  // const { search } = useLocation();
+  // const redirectInUrl = new URLSearchParams(search).get("redirect");
+  // const redirect = redirectInUrl ? `/${redirectInUrl}` : "/";
 
-  console.log({ redirectInUrl });
+  // console.log({ redirectInUrl });
   //data from store
   const { currentUser } = useSelect();
   const { setCurrentUser } = useDispatcher();
@@ -108,9 +108,9 @@ const SignIn: React.FC<SignInPropTypes> = ({ formType = "sign-in" }) => {
         } else {
           setError({} as errorTypes);
           setCurrentUser(response.data);
-          setTimeout(() => {
-            navigate(redirect || "/");
-          }, 1000);
+          // setTimeout(() => {
+          //   navigate(redirect || "/");
+          // }, 1000);
         }
       } catch (error) {
         console.log({ error });
