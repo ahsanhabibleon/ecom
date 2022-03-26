@@ -17,7 +17,7 @@ import ShippingAddress from "./Pages/ShippingAddress";
 const fetchProducts = async (): Promise<ProductTypes[]> => {
   return await fetch(
     // `https://fakestoreapi.com/products?_limit=10&_page=1`
-    `http://localhost:5001/api/products`
+    `${process.env.REACT_APP_API_BASE}/api/products`
   ).then((res) => res.json());
 };
 

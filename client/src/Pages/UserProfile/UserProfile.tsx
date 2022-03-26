@@ -49,15 +49,18 @@ const UserProfile: React.FC = () => {
         passwordRef.current?.value === confirmPasswordRef.current?.value &&
         (formValues.password = passwordRef.current?.value);
 
-      const response = await fetch("http://localhost:5001/api/users/update", {
-        method: "PUT",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify({ ...currentUser, ...formValues }),
-      })
+      const response = await fetch(
+        `${process.env.REACT_APP_API_BASE}/api/users/update`,
+        {
+          method: "PUT",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({ ...currentUser, ...formValues }),
+        }
+      )
         .then((res) => res.json())
         .catch((err) => console.log({ err }));
 

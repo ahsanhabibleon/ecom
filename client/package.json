@@ -2,7 +2,7 @@
   "name": "react-typescript-01",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:5001/",
+  "proxy": "https://mern-typescript-ecom.herokuapp.com/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.0",
     "@testing-library/jest-dom": "^5.16.2",
@@ -13,6 +13,7 @@
     "@types/react": "^17.0.39",
     "@types/react-dom": "^17.0.11",
     "classnames": "^2.3.1",
+    "dotenv": "^16.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-query": "^3.34.16",

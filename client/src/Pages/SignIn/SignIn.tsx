@@ -54,7 +54,7 @@ const SignIn: React.FC<SignInPropTypes> = ({ formType = "sign-in" }) => {
       } else {
         try {
           const response = await fetch(
-            "http://localhost:5001/api/users/signup",
+            `${process.env.REACT_APP_API_BASE}/api/users/signup`,
             {
               method: "POST",
               headers: {
@@ -86,17 +86,20 @@ const SignIn: React.FC<SignInPropTypes> = ({ formType = "sign-in" }) => {
       }
     } else {
       try {
-        const response = await fetch("http://localhost:5001/api/users/signin", {
-          method: "POST",
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            email: formValues.email,
-            password: formValues.password,
-          }),
-        })
+        const response = await fetch(
+          `${process.env.REACT_APP_API_BASE}/api/users/signin`,
+          {
+            method: "POST",
+            headers: {
+              Accept: "application/json",
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              email: formValues.email,
+              password: formValues.password,
+            }),
+          }
+        )
           .then((res) => res.json())
           .catch((err) => console.log({ err }));
 
