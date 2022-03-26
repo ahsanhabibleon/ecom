@@ -9,7 +9,6 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
   productId,
   addProductToCart,
 }) => {
-
   const prodId = window.location.pathname
     .split("/")
     .filter((t) => t.includes("p_id:"))[0]
@@ -21,16 +20,15 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
     "product",
     async (): Promise<ProductTypes> => {
       return await fetch(
-        "http://localhost:5001/api/products/" + productId || prodId
+        "${process.env.REACT_APP_API_BASE}/api/products/" + productId || prodId
       )
         .then((res) => res.json())
         .catch((err) => console.log(err));
     }
   );
 
-
   if (isLoading) return <>Loading...</>;
-  if(error) return <>An error has occurred:</>; // + error.message;
+  if (error) return <>An error has occurred:</>; // + error.message;
 
   return (
     <div className="product-details">
