@@ -8,7 +8,10 @@ import dotenv from "dotenv";
 
 dotenv.config();
 mongoose
-  .connect(process.env.MONGODB_URI)
+  .connect(
+    process.env.MONGODB_URI ||
+      "mongodb+srv://arrayinobject:Passmetheword786@cluster0.uchrt.mongodb.net/mern-ecom?retryWrites=true&w=majority"
+  )
   .then(() => {
     console.log("Connected to DB");
   })
@@ -36,7 +39,14 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
 // app.use("/static", express.static("public"));
 // app.use(express.static('public'));
 
+// const __dirname = path.resolve();
+console.log(__dirname);
 app.use("/static", express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "/client/build")));
+
+app.get("*", (req, res) =>
+  res.sendFile(path.join(__dirname, "/client/build/index.html"))
+);
 
 app.listen(port, () => console.log("Server is running on port " + port));
 
