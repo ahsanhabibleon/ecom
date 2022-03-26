@@ -44,7 +44,7 @@ console.log(__dirname);
 app.use("/static", express.static(path.join(__dirname, "/server/public")));
 app.use(express.static(path.join(__dirname, "/client/build")));
 
-app.get("*", (req, res) =>
+app.get("/", (req, res) =>
   res.sendFile(path.join(__dirname, "/client/build/index.html"))
 );
 
