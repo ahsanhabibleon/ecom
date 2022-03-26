@@ -39,13 +39,13 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
 // app.use("/static", express.static("public"));
 // app.use(express.static('public'));
 
-// const __dirname = path.resolve();
+__dirname = path.resolve();
 console.log(__dirname);
-app.use("/static", express.static(path.join(__dirname, "public")));
+app.use("/static", express.static(path.join(__dirname, "/server/public")));
 app.use(express.static(path.join(__dirname, "/client/build")));
 
-app.get("*", (req, res) =>
-  res.sendFile(path.join(__dirname, "../client/build/index.html"))
+app.get("/", (req, res) =>
+  res.sendFile(path.join(__dirname, "/client/build/index.html"))
 );
 
 app.listen(port, () => console.log("Server is running on port " + port));
