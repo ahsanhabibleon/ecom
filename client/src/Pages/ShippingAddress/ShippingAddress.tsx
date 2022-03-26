@@ -11,7 +11,7 @@ const ShippingAddress: React.FC = () => {
   const postalCodeRef = useRef<HTMLInputElement>(null);
   const countryRef = useRef<HTMLInputElement>(null);
 
-  const [error, setError] = useState({} as errorTypes);
+  const [error] = useState({} as errorTypes);
 
   return (
     <form>
