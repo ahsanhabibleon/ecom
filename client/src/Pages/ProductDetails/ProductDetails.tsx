@@ -20,7 +20,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
     "product",
     async (): Promise<ProductTypes> => {
       return await fetch(
-        "${process.env.REACT_APP_API_BASE}/api/products/" + productId || prodId
+        `${process.env.REACT_APP_API_BASE}/api/products/${productId || prodId}`
       )
         .then((res) => res.json())
         .catch((err) => console.log(err));
